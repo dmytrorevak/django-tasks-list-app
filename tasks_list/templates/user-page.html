@@ -14,12 +14,30 @@
             <p class="navbar-text">You have only {{ tasks|length }} tasks</p>
         </nav>
     </div>
-    {% for task in tasks %}
-        {{task.name}}
-        {{task.description}}
-        {{task.is_complete}}
-        {{task.deadline}}
-    {% endfor %}
-
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+        {% for task in tasks %}
+            <div class="panel panel-default">
+                <div class="panel-heading">{{task.name}}</div>
+                <div class="panel-body">{{task.description}}</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Is complete</th>
+                            <th>Deadline</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{task.is_complete}}</td>
+                            <td>{{task.deadline}}</td>
+                        </tr>
+                    </tbody>
+                </table>   
+            </div>
+        {% endfor %}
+        </div>
+    </div>
     <a href="{% url 'add_task' %}">Add Task</a>
 {% endblock content %}
