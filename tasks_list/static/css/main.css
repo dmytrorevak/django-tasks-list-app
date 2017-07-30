@@ -1,0 +1,32 @@
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+    background-color: #f6e5c6;
+}
+
+.authenticate-form {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    padding: 30px 30px 15px;
+    border-radius: 15px;
+    background-color: #f0ad4e;
+    border: 1px solid #eea236;
+    color: #3f2502;
+}
+
+.authenticate-button {
+    background-color: #3f2502;
+    color: #f0ad4e;
+    width: 20%;
+}
+
+.authenticate-button:hover {
+    color: #eea236;
+}
+
+.centered-form-group {
+    text-align: center;
+}
