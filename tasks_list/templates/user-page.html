@@ -2,11 +2,18 @@
 {% load staticfiles %}
 
 {% block title %}
-    User page
+    Tasks
 {% endblock title %}
 
 {% block content %}
-    <h1>Hello word</h1>
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <span class="navbar-brand">Hello {{user.username}}</span>
+            </div>
+            <p class="navbar-text">You have only {{ tasks|length }} tasks</p>
+        </nav>
+    </div>
     {% for task in tasks %}
         {{task.name}}
         {{task.description}}
