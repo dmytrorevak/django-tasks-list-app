@@ -6,7 +6,7 @@
 {% endblock title %}
 
 {% block content %}
-    <form action="{% url 'login' %}" method="POST" class="form-horizontal rounded authenticate-form">
+    <form action="{% url 'login' %}" method="POST" class="form-horizontal authenticate-form">
         {% csrf_token %}
         <div class="form-group">
             <label for="{{form.username.id_for_label}}" class="col-sm-2 control-label">Login</label>
@@ -24,5 +24,4 @@
             <button type="submit" class="btn authenticate-button">Log In</button>
         </div>
     </form>
-
 {% endblock content %}

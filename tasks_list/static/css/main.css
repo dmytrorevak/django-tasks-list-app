@@ -30,3 +30,7 @@
 .centered-form-group {
     text-align: center;
 }
+
+.error-field {
+    color: #a94442;
+}

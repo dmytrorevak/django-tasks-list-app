@@ -1,18 +1,24 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+  Sign Up
+{% endblock title %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
+    <form action="{% url 'sign_up' %}" method="POST" class="authenticate-form">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group {% if field.errors %}has-error{% endif %}">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {% for error in field.errors %}
+                    <p class="error-field">{{ error }}</p>
+                {% endfor %}
+                {{ field|add_class:"form-control"}}
+            </div>
         {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+        <div class="form-group centered-form-group">
+            <button type="submit" class="btn authenticate-button">Sign Up</button>
+        </div>
+    </form>
 {% endblock %}
