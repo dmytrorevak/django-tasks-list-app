@@ -41,3 +41,7 @@ def add_task_view(request):
         form = TaskForm()
 
     return render(request, 'add-task.html', {'form': form})
+
+
+def edit_task_view(request, task_id):
+    return render(request, 'edit-task.html')
