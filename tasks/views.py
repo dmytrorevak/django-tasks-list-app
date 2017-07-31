@@ -28,13 +28,8 @@ def add_task_view(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
-            task_name = form.cleaned_data['name']
-            task_description = form.cleaned_data['description']
-            task_deadline = form.cleaned_data['deadline']
-            task = Task.objects.create(name=task_name,
-                                       user=user,
-                                       description=task_description,
-                                       deadline=task_deadline)
+            task = form.save(commit=False)
+            task.user = user
             task.save()
             return redirect('/', permanent=True)
     else:
@@ -43,5 +38,7 @@ def add_task_view(request):
     return render(request, 'add-task.html', {'form': form})
 
 
+@login_required
 def edit_task_view(request, task_id):
-    return render(request, 'edit-task.html')
+    task = Task.objects.get(pk=task_id)
+    return render(request, 'edit-task.html', {'task': task})
