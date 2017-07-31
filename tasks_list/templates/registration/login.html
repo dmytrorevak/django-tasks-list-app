@@ -7,7 +7,7 @@
 {% endblock title %}
 
 {% block content %}
-    <form action="{% url 'login' %}" method="POST" class="form-horizontal authenticate-form">
+    <form action="{% url 'login' %}" method="POST" class="form-horizontal authenticate-form yellow">
         {% csrf_token %}
         <div class="form-group">
             <label for="{{form.username.id_for_label}}" class="col-sm-2 control-label">Login</label>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="form-group centered-form-group">
-            <button type="submit" class="btn authenticate-button">Log In</button>
+            <button type="submit" class="btn authenticate-button brown text-gold">Log In</button>
         </div>
     </form>
 {% endblock content %}

@@ -1,7 +1,23 @@
+.brown {
+    background-color: #321c09;
+}
+
+.yellow {
+    background-color: #f0ad4e;
+}
+
+.text-gold {
+    color: #f0ad4e;
+}
+
+.text-brown {
+    color: #321c09;
+}
+
 .wrapper {
     min-height: 100vh;
     position: relative;
-    background-color: #f6e5c6;
+    background-color: #f0d6a7;
 }
 
 .authenticate-form {
@@ -12,18 +28,14 @@
     width: 40%;
     padding: 30px 30px 15px;
     border-radius: 15px;
-    background-color: #f0ad4e;
     border: 1px solid #eea236;
-    color: #3f2502;
 }
 
 .authenticate-button {
-    background-color: #3f2502;
-    color: #f0ad4e;
     width: 20%;
 }
 
-.authenticate-button:hover {
+.brown-btn:hover {
     color: #eea236;
 }
 
@@ -33,4 +45,17 @@
 
 .error-field {
     color: #a94442;
+}
+
+.nav {
+    border-radius: initial;
+}
+
+.panel > table.table > thead.table-head > tr > th {
+    border: initial;
+}
+
+.panel > .panel-body + .table,
+ .panel > table.table > tbody.table-body > tr > td {
+    border-color: #321c09;
 }

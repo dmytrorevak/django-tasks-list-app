@@ -7,7 +7,7 @@
 {% endblock title %}
 
 {% block content %}
-    <form action="{% url 'sign_up' %}" method="POST" class="authenticate-form">
+    <form action="{% url 'sign_up' %}" method="POST" class="authenticate-form yellow">
         {% csrf_token %}
         {% for field in form %}
             <div class="form-group {% if field.errors %}has-error{% endif %}">
@@ -19,7 +19,7 @@
             </div>
         {% endfor %}
         <div class="form-group centered-form-group">
-            <button type="submit" class="btn authenticate-button">Sign Up</button>
+            <button type="submit" class="btn authenticate-button brown text-gold">Sign Up</button>
         </div>
     </form>
 {% endblock %}
