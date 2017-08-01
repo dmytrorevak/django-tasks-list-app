@@ -14,6 +14,10 @@
     color: #321c09;
 }
 
+.page-link {
+    margin: 0 5px;
+}
+
 .page-link:hover {
     text-decoration: none;
     color: #eea236;

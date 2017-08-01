@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^accounts/sign_up/$', views.sign_up_view, name='sign_up'),
     url(r'^add_task/$', views.add_task_view, name='add_task'),
     url(r'^edit/([0-9]+)/$', views.edit_task_view, name='edit_task'),
+    url(r'^remove/([0-9]+)/$', views.remove_task_view, name='remove_task'),
 ]

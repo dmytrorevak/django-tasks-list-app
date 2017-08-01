@@ -25,7 +25,8 @@
             <div class="panel text-brown yellow">
                 <div class="panel-heading brown text-gold">
                     {{task.name}}
-                <a href="{% url 'edit_task' task.id %}" class="text-gold page-link pull-right">Edit</a>   
+                <a href="{% url 'remove_task' task.id %}" class="text-gold page-link pull-right">Remove</a>
+                <a href="{% url 'edit_task' task.id %}" class="text-gold page-link pull-right">Edit</a>
                 </div>
                 <div class="panel-body">{{task.description}}</div>
                 <table class="table">

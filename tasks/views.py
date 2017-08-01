@@ -47,3 +47,9 @@ def edit_task_view(request, task_id):
     else:
         form = TaskForm(instance=task)
     return render(request, 'edit-task.html', {'form': form, 'task': task})
+
+
+def remove_task_view(request, task_id):
+    task = Task.objects.get(pk=task_id)
+    task.delete()
+    return redirect('/', permanent=True)
