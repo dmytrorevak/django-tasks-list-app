@@ -21,20 +21,25 @@
 
 .wrapper {
     min-height: 100vh;
-    position: relative;
+    /* position: relative; */
     background-color: #f0d6a7;
     padding-bottom: 100px;
 }
 
 .authenticate-form {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+     /* position: relative;  */
+     /* top: 50%;  */
+     /* left:50%;  */
+     /* transform: translate(0, 10%);  */
     width: 40%;
+    margin: 30px auto 0;
     padding: 30px 30px 15px;
     border-radius: 15px;
     border: 1px solid #eea236;
+}
+
+input[type="checkbox"] {
+    width: 35px;
 }
 
 .authenticate-button {
@@ -62,6 +67,6 @@
 }
 
 .panel > .panel-body + .table,
- .panel > table.table > tbody.table-body > tr > td {
+.panel > table.table > tbody.table-body > tr > td {
     border-color: #321c09;
 }

@@ -34,11 +34,16 @@ def add_task_view(request):
             return redirect('/', permanent=True)
     else:
         form = TaskForm()
-
     return render(request, 'add-task.html', {'form': form})
 
 
 @login_required
 def edit_task_view(request, task_id):
     task = Task.objects.get(pk=task_id)
-    return render(request, 'edit-task.html', {'task': task})
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task)
+        form.save()
+        return redirect('/', permanent=True)
+    else:
+        form = TaskForm(instance=task)
+    return render(request, 'edit-task.html', {'form': form, 'task': task})

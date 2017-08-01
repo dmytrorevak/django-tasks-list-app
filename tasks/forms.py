@@ -18,4 +18,4 @@ class SignUpForm(UserCreationForm):
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ('name', 'description', 'deadline')
+        fields = ('name', 'description', 'is_complete', 'deadline')
