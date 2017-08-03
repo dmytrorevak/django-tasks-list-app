@@ -66,6 +66,10 @@ input[type="checkbox"] {
     border-radius: initial;
 }
 
+.nav-button {
+    margin-right: 10px;
+}
+
 .panel > table.table > thead.table-head > tr > th {
     border: initial;
 }
