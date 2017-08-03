@@ -25,16 +25,11 @@
 
 .wrapper {
     min-height: 100vh;
-    /* position: relative; */
     background-color: #f0d6a7;
     padding-bottom: 100px;
 }
 
 .authenticate-form {
-     /* position: relative;  */
-     /* top: 50%;  */
-     /* left:50%;  */
-     /* transform: translate(0, 10%);  */
     width: 40%;
     margin: 30px auto 0;
     padding: 30px 30px 15px;
