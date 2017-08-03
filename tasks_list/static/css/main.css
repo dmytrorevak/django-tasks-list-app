@@ -1,0 +1,75 @@
+.brown {
+    background-color: #321c09;
+}
+
+.yellow {
+    background-color: #f0ad4e;
+}
+
+.text-gold {
+    color: #f0ad4e;
+}
+
+.text-brown {
+    color: #321c09;
+}
+
+.page-link {
+    margin: 0 5px;
+}
+
+.page-link:hover {
+    text-decoration: none;
+    color: #eea236;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-color: #f0d6a7;
+    padding-bottom: 100px;
+}
+
+.authenticate-form {
+    width: 40%;
+    margin: 30px auto 0;
+    padding: 30px 30px 15px;
+    border-radius: 15px;
+    border: 1px solid #eea236;
+}
+
+input[type="checkbox"] {
+    width: 35px;
+}
+
+.authenticate-button {
+    width: 20%;
+}
+
+.brown-btn:hover {
+    color: #eea236;
+}
+
+.centered-form-group {
+    text-align: center;
+}
+
+.error-field {
+    color: #a94442;
+}
+
+.nav {
+    border-radius: initial;
+}
+
+.nav-button {
+    margin-right: 10px;
+}
+
+.panel > table.table > thead.table-head > tr > th {
+    border: initial;
+}
+
+.panel > .panel-body + .table,
+.panel > table.table > tbody.table-body > tr > td {
+    border-color: #321c09;
+}

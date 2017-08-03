@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Tasks
+{% endblock title %}
+
+{% block navigation %}
+    <div class="row">
+        <nav class="navbar nav brown text-gold">
+            <div class="navbar-header">
+                <span class="navbar-brand">Hello {{user.username}}</span>
+            </div>
+            {% block navigation_message %}
+                <p class="navbar-text">You have only {{ tasks|length }} tasks</p>
+            {% endblock navigation_message %}
+            <div class="collapse navbar-collapse">
+                <div class="navbar-right">
+                    <a href="{% url 'logout' %}" class="btn navbar-btn nav-button yellow text-brown">Log Out</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+{% endblock navigation %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+        {% for task in tasks %}
+            <div class="panel text-brown yellow">
+                <div class="panel-heading brown text-gold">
+                    {{task.name}}
+                <a href="{% url 'remove_task' task.id %}" class="text-gold page-link pull-right">Remove</a>
+                <a href="{% url 'edit_task' task.id %}" class="text-gold page-link pull-right">Edit</a>
+                </div>
+                <div class="panel-body">{{task.description}}</div>
+                <table class="table">
+                    <thead class="table-head">
+                        <tr>
+                            <th>Is complete</th>
+                            <th>Deadline</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr>
+                            <td>{{task.is_complete}}</td>
+                            <td>{{task.deadline}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <a href="{% url 'add_task' %}" class="btn brown text-gold brown-btn">Add Task</a>
+        </div>
+    </div>
+{% endblock content %}

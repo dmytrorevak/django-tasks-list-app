@@ -1,0 +1,29 @@
+{% extends "user-page.html" %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block title %}
+    Edit Task
+{% endblock title %}
+
+{% block navigation_message %}
+    <p class="navbar-text">Edit your {{task.name}} task</p>
+{% endblock navigation_message %}
+
+{% block content %}
+    <form action="{% url 'edit_task' task.id %}" method="POST" class="form-horizontal authenticate-form yellow">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group {% if field.errors %}has-error{% endif %}">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {% for error in field.errors %}
+                    <p class="error-field">{{ error }}</p>
+                {% endfor %}
+                {{ field|add_class:"form-control"}}
+            </div>
+        {% endfor %}
+        <div class="form-group centered-form-group">
+            <button type="submit" class="btn authenticate-button brown text-gold brown-btn">Edit Task</button>
+        </div>
+    </form>
+{% endblock content %}
